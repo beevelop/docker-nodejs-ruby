@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t beevelop/nodejs-ruby .
+  - docker run beevelop/nodejs-ruby /bin/sh -c "ruby -v && gem -v && node -v && npm -v"
